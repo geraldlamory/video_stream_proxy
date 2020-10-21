@@ -3,3 +3,8 @@
 /.vscode/*
 /.vs/*
 CMakeSettings.json
+/CMakeFiles/*
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+video_stream_proxy

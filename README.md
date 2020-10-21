@@ -1,0 +1,6 @@
+# Install
+
+    cmake .
+    make
+
+# Run

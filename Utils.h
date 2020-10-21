@@ -5,7 +5,7 @@
 
 namespace utils
 {
-  bool equalsCharInsensitive(char c1, char c2);
+  bool equalsCharInsensitive(const char& c1, const char& c2);
   bool equalsCaseInsensitive(const std::string& str1, const std::string& str2);
 }
 

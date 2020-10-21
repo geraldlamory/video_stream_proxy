@@ -2,6 +2,7 @@
 #include "Utils.h"
 #include "HttpStream.h"
 
+#include <cstring>
 #include <sstream>
 
 HttpStream::HttpStream(const Socket& socket, size_t chunk_size) :
@@ -201,7 +202,7 @@ void HttpStream::parseHeaders(const std::string& str)
   // Request
   size_t sep = str.find(' ');
   size_t path_sep = str.find(' ', sep + 1);
-  size_t endline = str.find('\r\n', path_sep + 1);
+  size_t endline = str.find("\r\n", path_sep + 1);
 
   if (sep != std::string::npos && path_sep != std::string::npos && endline != std::string::npos)
   {
@@ -213,13 +214,13 @@ void HttpStream::parseHeaders(const std::string& str)
   // Headers
   size_t start = endline + 2;
   sep = str.find(": ", start);
-  endline = str.find('\r\n', sep + 1);
+  endline = str.find("\r\n", sep + 1);
 
   while (sep != std::string::npos)
   {
     _headers.push_back({str.substr(start, sep - start), str.substr(sep + 2, endline - sep - 2)});
     start = endline + 2;
     sep = str.find(':', start);
-    endline = str.find('\r\n', sep);
+    endline = str.find("\r\n", sep);
   }
 }

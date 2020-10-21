@@ -5,6 +5,9 @@
   #include <winsock2.h>
   typedef SOCKET socket_t;
 #else
+  #include <sys/types.h>
+  #include <sys/socket.h>
+  #include <netdb.h>
   typedef int socket_t;
   #define INVALID_SOCKET -1
 #endif

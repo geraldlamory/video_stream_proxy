@@ -13,7 +13,7 @@ public:
   Url(const std::string& str);
   virtual ~Url();
 
-  const std::string& toString() const { _str; };
+  const std::string& toString() const { return _str; };
 
   const std::string& getHost() const { return _host; }
   const std::string& getPath() const { return _path; }

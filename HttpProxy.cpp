@@ -2,6 +2,7 @@
 #include "HttpStream.h"
 #include "Utils.h"
 #include <iostream>
+#include <thread>
 
 HttpProxy::HttpProxy(const std::string& host, int port) :
   _port(-1),

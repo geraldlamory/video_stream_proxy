@@ -10,6 +10,7 @@
 #endif
 
 #include <stdexcept>
+#include <cstring>
 
 void Socket::initialize()
 {
@@ -111,7 +112,7 @@ Socket Socket::accept() const
   socket_t    client = INVALID_SOCKET;
   sockaddr_in client_addr;
 
-  int addr_len = sizeof(client_addr);
+  unsigned int addr_len = sizeof(client_addr);
   client = ::accept(_sock, (struct sockaddr*)&client_addr, &addr_len);
 
   return Socket(client);
@@ -126,7 +127,7 @@ void Socket::close()
       closesocket(_sock);
 #else
     if (shutdown(_sock, SHUT_RDWR) == 0)
-      close(_sock);
+      ::close(_sock);
 #endif
     _sock = INVALID_SOCKET;
   }
