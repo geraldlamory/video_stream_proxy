@@ -112,7 +112,7 @@ Socket Socket::accept() const
   socket_t    client = INVALID_SOCKET;
   sockaddr_in client_addr;
 
-  unsigned int addr_len = sizeof(client_addr);
+  socklen_t addr_len = sizeof(client_addr);
   client = ::accept(_sock, (struct sockaddr*)&client_addr, &addr_len);
 
   return Socket(client);

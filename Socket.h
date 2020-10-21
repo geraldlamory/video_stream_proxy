@@ -4,6 +4,7 @@
 #ifdef _WIN32
   #include <winsock2.h>
   typedef SOCKET socket_t;
+  typedef int socklen_t;
 #else
   #include <sys/types.h>
   #include <sys/socket.h>
