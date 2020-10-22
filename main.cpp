@@ -8,7 +8,7 @@
 int main(int ac, char** av)
 {
   if (ac != 2) {
-    std::cout << "usage: " << av[0] << " <stream_url>" << std::endl;
+    std::cout << "usage: " << av[0] << " <server_url>" << std::endl;
     return EXIT_FAILURE;
   }
 
