@@ -1,3 +1,7 @@
+# Details
+
+This is a simple proxy server used to intercept requests between a local player and a CDN.
+
 # Install
 
 To build the project install cmake then type in the source directory :
@@ -33,7 +37,6 @@ The video should play in VLC, and request IN/OUT should be printed in the server
 Other sources for testing :
 
     http://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8
-    http://wowza-test.streamroot.io/liveOriginAbsolute/_definst_/sintel-live.smil/chunklist_b1128000.m3u8
     http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
 
 # Limitations
